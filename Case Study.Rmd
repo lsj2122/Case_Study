@@ -1,0 +1,22 @@
+---
+title: "Case Study"
+output: github_document
+---
+
+Loading p8105 data
+```{r}
+library(p8105.datasets)
+library(tidyverse)
+```
+
+```{r}
+data(nyc_airbnb)
+```
+
+```{r}
+nyc_airbnb = 
+  nyc_airbnb |> 
+  rename(borough = neighbourhood_group) |> 
+  mutate(stars = review_scores_location / 2)
+```
+
